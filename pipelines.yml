@@ -1,6 +1,6 @@
 
 pipelines: 
-  - name: state_test_git
+  - name: test_pip
     steps:
       - name: step_one
         type: Bash
