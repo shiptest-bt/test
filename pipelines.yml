@@ -2,24 +2,18 @@
 pipelines: 
   - name: state_test_git
     steps:
-      - name: testReport_u18
+      - name: step-one
         type: Bash
         configuration:
-          inputResources:
-            - name: git
         execution:
           onExecute:
-            - pushd $res_git_resourcePath
-            - sudo chmod +x echoTest.sh
-            - ./echoTest.sh
-            - sleep 2
-            - echo 'https://github.com/shiptest-bt/ymlTest/edit/master/pipelines.yml'
+            - echo "executing step-one"
       
-      - name: run_file_restore
+      - name: step-two
         type: Bash
         configuration:
           inputSteps:
-            - name: testReport_u18
+            - name: step-one
         execution:
           onExecute:
-            - printenv
+            - echo "executing step-two"
