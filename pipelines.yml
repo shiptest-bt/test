@@ -2,18 +2,18 @@
 pipelines: 
   - name: state_test_git
     steps:
-      - name: step-one
+      - name: step_one
         type: Bash
         configuration:
         execution:
           onExecute:
-            - echo "executing step-one"
+            - echo "executing step_one"
       
-      - name: step-two
+      - name: step_two
         type: Bash
         configuration:
           inputSteps:
-            - name: step-one
+            - name: step_one
         execution:
           onExecute:
-            - echo "executing step-two"
+            - echo "executing step_two"
