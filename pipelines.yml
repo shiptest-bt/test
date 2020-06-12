@@ -16,3 +16,13 @@ pipelines:
         execution:
           onExecute:
             - echo "executing step_two"
+  - name: demo
+    steps:
+      - name: checkEntplusApi
+        type: HealthCheck
+        syntaxVersion: 0.0.1
+        configuration:
+          healthCheckUrl: "https://entplus.jfrog.io/artifactory/api/system/ping"
+          #showTimeTaken: true
+          #showOuptut: true
+          #retry: 3
